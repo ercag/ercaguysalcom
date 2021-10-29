@@ -70,7 +70,7 @@ class _GithubRepoListState extends State<GithubRepoList> {
                       )),
                   child: InkWell(
                       onTap: () {
-                        launch(repoList[index].url);
+                        launch(repoList[index].html_url);
                       },
                       child: ListTile(
                         mouseCursor: MouseCursor.defer,
