@@ -13,14 +13,21 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: const [
-          Logo(),
-          Contact(),
-          Expanded(child: GithubRepoList()),
-        ]);
+    print(MediaQuery.of(context).size.width);
+    return Container(
+        alignment: Alignment.center,
+        child: SizedBox(
+            width: MediaQuery.of(context).size.width > 800
+                ? MediaQuery.of(context).size.width / 3
+                : MediaQuery.of(context).size.width,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Logo(),
+                  Contact(),
+                  Expanded(child: GithubRepoList()),
+                ])));
   }
 }

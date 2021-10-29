@@ -50,10 +50,13 @@ class _BackgroundState extends State<Background> {
             rotation: 0.79,
           ),
         ),
-        widget.child,
         Align(
             alignment: Alignment.bottomRight,
-            child: Image.asset('assets/images/tree.png'))
+            child: Image.asset(
+              'assets/images/tree.png',
+              scale: 2,
+            )),
+        widget.child,
       ],
     );
   }
