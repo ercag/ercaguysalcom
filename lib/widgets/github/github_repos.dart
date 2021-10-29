@@ -2,6 +2,7 @@ import 'package:ercaguysalcom/services/github_services.dart';
 import 'package:ercaguysalcom/widgets/github/github_repos_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GithubRepoList extends StatefulWidget {
   const GithubRepoList({Key? key}) : super(key: key);
@@ -69,7 +70,7 @@ class _GithubRepoListState extends State<GithubRepoList> {
                       )),
                   child: InkWell(
                       onTap: () {
-                        print(repoList[index].url);
+                        launch(repoList[index].url);
                       },
                       child: ListTile(
                         mouseCursor: MouseCursor.defer,
